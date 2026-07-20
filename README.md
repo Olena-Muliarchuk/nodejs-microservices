@@ -82,7 +82,29 @@ Other branches, meaning inferred from the name only — not documented anywhere 
 
 ---
 
-## Original course info
+## 🐳 Local Infrastructure
+
+Replaces the manual `docker run` steps from `_Resources` with a single `docker-compose.yml` at repo root.
+
+**Not included:** MongoDB — using MongoDB Atlas (cloud) instead of a local container. Connection string goes in `.env` (see `.env.example`).
+
+```bash
+docker compose up -d                    # redis, jaeger, rabbitmq
+docker compose --profile tools up -d    # + redis-commander
+docker compose down
+docker compose logs -f
+```
+
+| Service | Purpose | URL / Port |
+|---|---|---|
+| Redis | caching | `localhost:7379` |
+| Redis Commander | Redis UI | http://localhost:8081 |
+| Jaeger | tracing (OpenTelemetry) | UI: http://localhost:16686 |
+| RabbitMQ | message broker | UI: http://localhost:15672 (guest/guest) |
+
+Redis Commander runs as a container here instead of the global `npm install -g redis-commander` from the original course snippets — drop that service from `docker-compose.yml` if you'd rather run it that way.
+
+---
 
 This repo is for the LinkedIn Learning course [Node.js: Microservices](https://www.linkedin.com/learning/node-js-microservices-22685072) by Daniel Khan.
 
