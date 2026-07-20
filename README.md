@@ -1,52 +1,108 @@
-# Node.js: Microservices
-This is the repository for the LinkedIn Learning course Node.js: Microservices. The full course is available from [LinkedIn Learning][lil-course-url].
+# Node.js: Microservices — Learning Fork
 
-![Node.js: Microservices][lil-thumbnail-url] 
+> Fork of [LinkedInLearning/nodejs-microservices-4403064](https://github.com/LinkedInLearning/nodejs-microservices-4403064) — course *Node.js: Microservices* by Daniel Khan.
+> Original README (install steps, license) is preserved below in [Original course info](#original-course-info).
 
-In this fast-paced era of distributed systems, mastering microservices—not just deploying services, but truly understanding the patterns and principles that drive them— is essential for developers. And in organizations large and small, Node.js is often the platform of choice for building microservices architectures. In this course, Daniel Khan
-shows you how to use Node.js to create a microservice architecture from scratch and tackles the all-too-common challenge of transforming a monolithic app into a flexible, modular system composed of individual services. Throughout the course, Daniel explores crucial concepts like service discovery, resilience, and decoupling. Check out this course to gain practical knowledge of microservices that you can apply to your day-to-day work immediately.
+---
 
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
+## 🎯 Why I'm going through this
 
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
+I already build and ship backend services, but this course is about going deeper on the core microservices patterns — service discovery, fault tolerance, queues — beyond just wiring them up.
 
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
+Goal: for each pattern — understand *why* it works, see where it breaks, and know when it's actually the right call to reach for it.
 
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
+---
 
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+## 🗂 Progress
 
-## Installing
-1. We need [Node.js](https://nodejs.org/en). I would just recommend installing the current LTS, means long-term supported version that you see here on the nodejs.org website. 
-2. You will also need a Git client on your system to acquire the exercise files from GitHub. On [git-scm.com](https://git-scm.com/downloads) you will be presented with selections for your particular operating system. 
-3. We will use [Docker](https://www.docker.com/). You will need to have Docker installed on your system. Download the respective installation files for your system. 
+Branch naming: `CHAPTER#_MOVIE#`, `b` = beginning state, `e` = end state. Chapters 1–2 (env setup, planning) have no code branches. Tick **Status** as you go.
 
-Once you have installed all of that on your system, you can check it in your console or terminal by running:
-```
+### 3. Your First Service: The Catalog Service
+| Video | Branch (b → e) | Status |
+|---|---|---|
+| Creating the service | `03_02b` → `03_02e` | ☐ |
+| Adding business logic and database access | `03_04b` → `03_04e` | ☐ |
+| Creating your first REST endpoint | `03_05b` → `03_05e` | ☐ |
+| Completing the API | `03_06b` → `03_06e` | ☐ |
+| Testing REST endpoints | `03_07b` → `03_07e` | ☐ |
+
+### 4. Creating a Service Registry
+| Video | Branch (b → e) | Status |
+|---|---|---|
+| Setting up the registry | `04_02b` → `04_02e` | ☐ |
+| Registering services | `04_03b` → `04_03e` | ☐ |
+| Creating and testing the registration route | `04_04b` → `04_04e` | ☐ |
+| Unregistering services | `04_05b` → `04_05e` | ☐ |
+| Querying the registry | `04_06b` → `04_06e` | ☐ |
+| Removing expired services | `04_07b` → `04_07e` | ☐ |
+| Registering on service on start | `04_08b` → `04_08e` | ☐ |
+| Adding heartbeat and unregistering on shutdown | `04_09b` → `04_09e` | ☐ |
+
+### 5. Using Services
+| Video | Branch (b → e) | Status |
+|---|---|---|
+| Creating the service client | `05_02b` → `05_02e` | ☐ |
+| Using the catalog service | `05_03b` → `05_03e` | ☐ |
+| Sanitizing data | `05_05b` → `05_05e` | ☐ |
+| Creating the CartService | `05_06b` → `05_06e` | ☐ |
+
+### 6. Authenticating APIs
+| Video | Branch (b → e) | Status |
+|---|---|---|
+| Creating the user service | `06_02b` → `06_02e` | ☐ |
+| Add JWT tokens to the user service | `06_03b` → `06_03e` | ☐ |
+| Make the front end use JWT authentication | `06_04b` → `06_04e` | ☐ |
+| Using bearer headers | `06_05b` → `06_05e` | ☐ |
+| Protecting endpoints with JWT | `06_06b` → `06_06e` | ☐ |
+
+### 7. Adding Fault Tolerance and Resilience
+| Video | Branch (b → e) | Status |
+|---|---|---|
+| Chaos testing | `07_02b` → `07_02e` | ☐ |
+| Adding caching to reduce load and bridge outages | `07_03b` → `07_03e` | ☐ |
+| Setting up the order service | `07_06b` → `07_06e` | ☐ |
+| Producing orders | `07_07b` → `07_07e` | ☐ |
+| Consuming orders | `07_08b` → `07_08e` | ☐ |
+
+Videos without a listed branch (e.g. "Designing a REST API", "Testing the catalog service", "Using queues for decoupling", "Installing up RabbitMQ", "Service monitoring with OpenTelemetry and Jaeger") are conceptual/config steps with no separate code state in the repo — same goes for every chapter-intro video ("What's your goal for this chapter?", "API authentication with JWT").
+
+Other branches, meaning inferred from the name only — not documented anywhere in the original repo, worth double-checking before relying on it: `start` (presumably initial state), `final` (presumably same as `main`'s final state), plus `fix-routes-file` and `update-eslintrc`, which read like one-off fixes rather than a lesson state.
+
+**Status legend:** ☐ not started · 🟡 in progress · ✅ done, matches `e` · 🔁 done differently, worth revisiting
+
+---
+
+## 🧭 How I'm working through it
+
+1. Checkout the `b` branch for the video.
+2. Create my own branch off it: `git checkout -b wip/03_02`.
+3. Watch the video, implement it myself without looking at `e`.
+4. Diff against `e` to check correctness, don't copy from it.
+5. Update the table above with the topic and any notes worth keeping.
+
+---
+
+## Original course info
+
+This repo is for the LinkedIn Learning course [Node.js: Microservices](https://www.linkedin.com/learning/node-js-microservices-22685072) by Daniel Khan.
+
+### Installing
+
+1. [Node.js](https://nodejs.org/en) (current LTS)
+2. A Git client — [git-scm.com](https://git-scm.com/downloads)
+3. [Docker](https://www.docker.com/)
+
+Verify with:
+```bash
 node -v
 docker -v
 git -v
-``` 
+```
 
-These steps are covered in the video "Installing Git, Node.js, and Docker" in the course videos.
+### Branches
 
-### Instructor
+This repository has branches for each of the videos in the course, named `CHAPTER#_MOVIE#`. `b` = beginning state, `e` = end state, `main` = final state of the whole course.
 
-Daniel Khan 
-                            
-Technology Lead, Developer, Application Architect
+If switching branches fails with `error: Your local changes ... would be overwritten by checkout`, either commit (`git add . && git commit -m "..."`) or stash your changes first.
 
-                            
-
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/daniel-khan).
-
-[lil-course-url]: https://www.linkedin.com/learning/node-js-microservices-22685072?dApp=59033956&leis=LAA
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQGNhXwSHfVTTg/learning-public-crop_288_512/0/1691165894653?e=2147483647&v=beta&t=Ct2CRNdv8le_M-0mDHAtTX7YDIyGoRWAQr3D22q9FOY
+Licensed under the LinkedIn Learning Exercise File License. Instructor: Daniel Khan.
