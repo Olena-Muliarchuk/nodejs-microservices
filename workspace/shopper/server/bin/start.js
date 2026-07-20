@@ -35,6 +35,10 @@ server.on("listening", () => {
   console.info(
     `${config.serviceName}:${config.serviceVersion} listening on ${bind}`
   );
+
+  if (typeof addr !== "string") {
+    console.info(`→ http://localhost:${addr.port}`);
+  }
 });
 
 // Connect to Redis and MongoDB before starting the server
