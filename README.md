@@ -20,16 +20,16 @@ Branch naming: `CHAPTER#_MOVIE#`, `b` = beginning state, `e` = end state. Chapte
 ### 3. Your First Service: The Catalog Service
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Creating the service | `03_02b` → `03_02e` | ☐ |
-| Adding business logic and database access | `03_04b` → `03_04e` | ☐ |
-| Creating your first REST endpoint | `03_05b` → `03_05e` | ☐ |
-| Completing the API | `03_06b` → `03_06e` | ☐ |
-| Testing REST endpoints | `03_07b` → `03_07e` | ☐ |
+| Creating the service | `03_02b` → `03_02e` | ✅ |
+| Adding business logic and database access | `03_04b` → `03_04e` | ✅ |
+| Creating your first REST endpoint | `03_05b` → `03_05e` | ✅ |
+| Completing the API | `03_06b` → `03_06e` | ✅ |
+| Testing REST endpoints | `03_07b` → `03_07e` | ✅ |
 
 ### 4. Creating a Service Registry
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Setting up the registry | `04_02b` → `04_02e` | ☐ |
+| Setting up the registry | `04_02b` → `04_02e` | 🟡 |
 | Registering services | `04_03b` → `04_03e` | ☐ |
 | Creating and testing the registration route | `04_04b` → `04_04e` | ☐ |
 | Unregistering services | `04_05b` → `04_05e` | ☐ |
