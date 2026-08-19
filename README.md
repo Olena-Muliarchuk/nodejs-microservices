@@ -29,21 +29,21 @@ Branch naming: `CHAPTER#_MOVIE#`, `b` = beginning state, `e` = end state. Chapte
 ### 4. Creating a Service Registry
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Setting up the registry | `04_02b` → `04_02e` | 🟡 |
-| Registering services | `04_03b` → `04_03e` | ☐ |
-| Creating and testing the registration route | `04_04b` → `04_04e` | ☐ |
-| Unregistering services | `04_05b` → `04_05e` | ☐ |
-| Querying the registry | `04_06b` → `04_06e` | ☐ |
-| Removing expired services | `04_07b` → `04_07e` | ☐ |
-| Registering on service on start | `04_08b` → `04_08e` | ☐ |
-| Adding heartbeat and unregistering on shutdown | `04_09b` → `04_09e` | ☐ |
+| Setting up the registry | `04_02b` → `04_02e` | ✅ |
+| Registering services | `04_03b` → `04_03e` | ✅ |
+| Creating and testing the registration route | `04_04b` → `04_04e` | ✅ |
+| Unregistering services | `04_05b` → `04_05e` | ✅ |
+| Querying the registry | `04_06b` → `04_06e` | ✅ |
+| Removing expired services | `04_07b` → `04_07e` | ✅ |
+| Registering on service on start | `04_08b` → `04_08e` | ✅ |
+| Adding heartbeat and unregistering on shutdown | `04_09b` → `04_09e` | ✅ |
 
 ### 5. Using Services
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Creating the service client | `05_02b` → `05_02e` | ☐ |
-| Using the catalog service | `05_03b` → `05_03e` | ☐ |
-| Sanitizing data | `05_05b` → `05_05e` | ☐ |
+| Creating the service client | `05_02b` → `05_02e` | ✅ |
+| Using the catalog service | `05_03b` → `05_03e` | ✅ |
+| Sanitizing data | `05_05b` → `05_05e` | ✅ |
 | Creating the CartService | `05_06b` → `05_06e` | ☐ |
 
 ### 6. Authenticating APIs
