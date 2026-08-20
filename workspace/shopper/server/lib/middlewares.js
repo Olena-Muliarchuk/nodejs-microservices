@@ -1,6 +1,4 @@
 const jwt = require("jsonwebtoken");
-
-const UserService = require("../services/UserServiceClient");
 const CartService = require("../services/CartServiceClient");
 const config = require("../config");
 

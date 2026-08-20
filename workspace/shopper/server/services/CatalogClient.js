@@ -46,18 +46,15 @@ class CatalogClient {
    * @param {Object} data - The data for the new item
    * @returns {Promise<Object>} - A promise that resolves to the new Item object
    */
-  static async create(data) {
-    try {
-      const result = await ServiceClient.callService("catalog-service", {
-        method: "POST",
-        url: `/items`,
-        data
-      });
-      return result;
-    } catch (error) {
-      console.error("Error occurred while creating item:", error);
-      return null;
-    }
+  static async create(data, token) {
+    return ServiceClient.callService("catalog-service", {
+      method: "POST",
+      url: `/items`,
+      data,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
   }
 
   /**
@@ -66,18 +63,15 @@ class CatalogClient {
    * @param {Object} data - The new data for the item
    * @returns {Promise<Object|null>} - A promise that resolves to the updated Item object, or null if no item was found
    */
-  static async update(itemId, data) {
-    try {
-      const result = await ServiceClient.callService("catalog-service", {
-        method: "PUT",
-        url: `/items/${itemId}`,
-        data
-      });
-      return result;
-    } catch (error) {
-      console.error("Error occurred while updating item:", error);
-      return null;
-    }
+  static async update(itemId, data, token) {
+    return ServiceClient.callService("catalog-service", {
+      method: "PUT",
+      url: `/items/${itemId}`,
+      data,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
   }
 
   /**
@@ -85,17 +79,14 @@ class CatalogClient {
    * @param {string} itemId - The id of the item to remove
    * @returns {Promise<Object>} - A promise that resolves to the deletion result
    */
-  static async remove(itemId) {
-    try {
-      const result = await ServiceClient.callService("catalog-service", {
-        method: "DELETE",
-        url: `/items/${itemId}`
-      });
-      return result;
-    } catch (error) {
-      console.error("Error occurred while removing item:", error);
-      return null;
-    }
+  static async remove(itemId, token) {
+    return ServiceClient.callService("catalog-service", {
+      method: "DELETE",
+      url: `/items/${itemId}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
   }
 }
 
