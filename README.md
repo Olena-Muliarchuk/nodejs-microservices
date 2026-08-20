@@ -15,6 +15,8 @@ Goal: for each pattern — understand *why* it works, see where it breaks, and k
 
 ## 🗂 Progress
 
+**Status: course complete.**  Every `b`/`e` branch pair from the original repo (chapters 3–7, verified against [upstream's branch list](https://github.com/LinkedInLearning/nodejs-microservices-4403064/branches)) is accounted for below.
+
 Branch naming: `CHAPTER#_MOVIE#`, `b` = beginning state, `e` = end state. Chapters 1–2 (env setup, planning) have no code branches. Tick **Status** as you go.
 
 ### 3. Your First Service: The Catalog Service
@@ -44,27 +46,29 @@ Branch naming: `CHAPTER#_MOVIE#`, `b` = beginning state, `e` = end state. Chapte
 | Creating the service client | `05_02b` → `05_02e` | ✅ |
 | Using the catalog service | `05_03b` → `05_03e` | ✅ |
 | Sanitizing data | `05_05b` → `05_05e` | ✅ |
-| Creating the CartService | `05_06b` → `05_06e` | ☐ |
+| Creating the CartService | `05_06b` → `05_06e` | ✅ |
 
 ### 6. Authenticating APIs
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Creating the user service | `06_02b` → `06_02e` | ☐ |
-| Add JWT tokens to the user service | `06_03b` → `06_03e` | ☐ |
-| Make the front end use JWT authentication | `06_04b` → `06_04e` | ☐ |
-| Using bearer headers | `06_05b` → `06_05e` | ☐ |
-| Protecting endpoints with JWT | `06_06b` → `06_06e` | ☐ |
+| Creating the user service | `06_02b` → `06_02e` | ✅ |
+| Add JWT tokens to the user service | `06_03b` → `06_03e` | ✅ |
+| Make the front end use JWT authentication | `06_04b` → `06_04e` | ✅ |
+| Using bearer headers | `06_05b` → `06_05e` | ✅ |
+| Protecting endpoints with JWT | `06_06b` → `06_06e` | ✅ |
 
 ### 7. Adding Fault Tolerance and Resilience
 | Video | Branch (b → e) | Status |
 |---|---|---|
-| Chaos testing | `07_02b` → `07_02e` | ☐ |
-| Adding caching to reduce load and bridge outages | `07_03b` → `07_03e` | ☐ |
-| Setting up the order service | `07_06b` → `07_06e` | ☐ |
-| Producing orders | `07_07b` → `07_07e` | ☐ |
-| Consuming orders | `07_08b` → `07_08e` | ☐ |
+| Chaos testing | `07_02b` → `07_02e` | 🔁 |
+| Adding caching to reduce load and bridge outages | `07_03b` → `07_03e` | ✅ |
+| Setting up the order service | `07_06b` → `07_06e` | ✅ |
+| Producing orders | `07_07b` → `07_07e` | ✅ |
+| Consuming orders | `07_08b` → `07_08e` | ✅ |
 
-Videos without a listed branch (e.g. "Designing a REST API", "Testing the catalog service", "Using queues for decoupling", "Installing up RabbitMQ", "Service monitoring with OpenTelemetry and Jaeger") are conceptual/config steps with no separate code state in the repo — same goes for every chapter-intro video ("What's your goal for this chapter?", "API authentication with JWT").
+Videos without a listed branch (e.g. "Designing a REST API", "Testing the catalog service", "Using queues for decoupling", "Installing up RabbitMQ", "Service monitoring with OpenTelemetry and Jaeger") are conceptual/config steps with no separate code state in the repo — same goes for every chapter-intro video ("What's your goal for this chapter?", "API authentication with JWT") and the closing "Conclusion: Next steps" video, which has no branch either.
+
+`07_02` (chaos testing) is marked 🔁: done by hand — manually killing a service mid-request and observing what broke — rather than as a scripted/branch exercise.
 
 Other branches, meaning inferred from the name only — not documented anywhere in the original repo, worth double-checking before relying on it: `start` (presumably initial state), `final` (presumably same as `main`'s final state), plus `fix-routes-file` and `update-eslintrc`, which read like one-off fixes rather than a lesson state.
 

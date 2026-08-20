@@ -1,8 +1,10 @@
 /** @module CatalogClient */
 
+const config = require("../config");
 const ServiceClient = require("./ServiceClient");
 
-let allItemsCache = [];
+const ALL_ITEMS_CACHE_KEY = "shopper_catalog:all_items";
+const ALL_ITEMS_CACHE_TTL_SECONDS = 60;
 
 /**
  * Service class for interacting with the Item catalog
@@ -18,11 +20,16 @@ class CatalogClient {
         method: "GET",
         url: `/items`
       });
-      allItemsCache = result; // Update the cache with the latest items
+      await config.redis.client.set(
+        ALL_ITEMS_CACHE_KEY,
+        JSON.stringify(result),
+        { EX: ALL_ITEMS_CACHE_TTL_SECONDS }
+      );
       return result;
     } catch (error) {
       console.error("Error occurred while fetching items:", error);
-      return allItemsCache;
+      const cached = await config.redis.client.get(ALL_ITEMS_CACHE_KEY);
+      return cached ? JSON.parse(cached) : [];
     }
   }
 
