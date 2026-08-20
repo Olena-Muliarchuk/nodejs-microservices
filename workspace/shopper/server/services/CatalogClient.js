@@ -2,6 +2,8 @@
 
 const ServiceClient = require("./ServiceClient");
 
+let allItemsCache = [];
+
 /**
  * Service class for interacting with the Item catalog
  */
@@ -16,10 +18,11 @@ class CatalogClient {
         method: "GET",
         url: `/items`
       });
+      allItemsCache = result; // Update the cache with the latest items
       return result;
     } catch (error) {
       console.error("Error occurred while fetching items:", error);
-      return [];
+      return allItemsCache;
     }
   }
 
