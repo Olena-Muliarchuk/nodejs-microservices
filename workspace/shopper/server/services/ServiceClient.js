@@ -14,7 +14,7 @@ class ServiceClient {
       return response.data;
     } catch (error) {
       const errorMessage =
-        (error.response && error.response.data && error.response.data.error) ||
+        (error.response && error.response.data && error.response.data.message) ||
         error.message;
       throw new Error(`Error fetching service ${servicename}: ${errorMessage}`);
     }
@@ -29,7 +29,7 @@ class ServiceClient {
       return response.data;
     } catch (error) {
       const errorMessage =
-        (error.response && error.response.data && error.response.data.error) ||
+        (error.response && error.response.data && error.response.data.message) ||
         error.message;
       throw new Error(errorMessage);
     }

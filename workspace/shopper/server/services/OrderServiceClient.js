@@ -1,5 +1,7 @@
 /** @module OrderService */
+const ampq = require("amqplib");
 const ServiceClient = require("./ServiceClient");
+
 
 /**
  * Service class for managing orders
@@ -12,11 +14,25 @@ class OrderServiceClient {
    * @returns {Promise<Object>} - A promise that resolves to the new order
    */
   static async create(userId, email, items) {
-    return ServiceClient.callService("order-service", {
-      method: "post",
-      url: `/orders`,
-      data: { userId, email, items }
-    });
+    try {
+        const connection = await ampq.connect(process.env.RABBITMQ_URL || "amqp://127.0.0.1");
+        const channel = await connection.createChannel();
+        const queue = "order_queue";
+        const message = JSON.stringify({ userId, email, items });
+
+        await channel.assertQueue(queue, { durable: true });
+        await channel.sendToQueue(queue, Buffer.from(message));
+
+        console.log(" [x] Sent %s", message);
+    }
+    catch(error) {
+        console.error("Error occurred while creating order:", error);
+    }
+    // return ServiceClient.callService("order-service", {
+    //   method: "post",
+    //   url: `/orders`,
+    //   data: { userId, email, items }
+    // });
   }
 
   /**

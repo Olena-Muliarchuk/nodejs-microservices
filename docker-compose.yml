@@ -39,10 +39,13 @@ services:
       - microservices-net
 
   rabbitmq:
-    image: rabbitmq:3.11-management
+    image: rabbitmq:4.2-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER:-admin}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD:-admin}
     ports:
       - "${RABBITMQ_AMQP_PORT:-5672}:5672"    # AMQP
-      - "${RABBITMQ_UI_PORT:-15672}:15672"    # Management UI (guest/guest)
+      - "${RABBITMQ_UI_PORT:-15672}:15672"    # Management UI (admin/admin)
     restart: unless-stopped
     networks:
       - microservices-net
